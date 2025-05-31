@@ -47,3 +47,37 @@ sudo apt install vagrant
 ### 🏗️ Architecture
 <img width="968" alt="image" src="https://github.com/user-attachments/assets/d7e9681f-8045-44c2-8223-a5adf5bbfaba" />
 
+### ⚡ Installation rapide
+
+#### 1️⃣ Cloner le repository
+git clone https://github.com/votre-username/kubernetes-vagrant-cluster.git
+cd kubernetes-vagrant-cluster 
+
+#### 2️⃣ Démarrer le cluster
+Créer et démarrer toutes les VMs
+vagrant up
+
+#### 3️⃣ Se connecter au control plane
+vagrant ssh cp1
+kubectl get nodes
+
+#### Résultat attendu :
+NAME   STATUS   ROLES           AGE   VERSION
+cp1    Ready    control-plane   5m    v1.33.1
+w1     Ready    <none>          3m    v1.33.1
+w2     Ready    <none>          3m    v1.33.1
+w3     Ready    <none>          3m    v1.33.1
+
+
+
+
+
+
+### 📁 Structure du projet  
+### 🛠️ Configuration Vagrant  
+### 🔧 Installation Kubernetes  
+### ✅ Tests et validation  
+### 🎛️ Gestion du cluster  
+### 🐛 Dépannage  
+### 📚 Ressources  
+
