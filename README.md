@@ -81,25 +81,24 @@ kubernetes-vagrant-cluster/
 
 ### 🛠️ Configuration Vagrant
 #### 📝 Vagrantfile complet
-
--*- mode: ruby -*-
-vi: set ft=ruby :
+```ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  
-<!--- 🐧 Box Ubuntu 22.04 compatible VMware -->
+  # 🐧 Box Ubuntu 22.04 compatible VMware
   config.vm.box = "generic/ubuntu2204"
   
-[//]: # 🔧 Configuration VMware globale
+  # 🔧 Configuration VMware globale
   config.vm.provider "vmware_desktop" do |vmware|
     vmware.vmx["memsize"] = "2048"
     vmware.vmx["numvcpus"] = "2"
   end
   
-[//]: # 🔐 Configuration SSH
+  # 🔐 Configuration SSH
   config.ssh.insert_key = false
   
-[//]: # 🎛️ Control Plane (cp1)
+  # 🎛️ Control Plane (cp1)
   config.vm.define "cp1" do |cp1|
     cp1.vm.hostname = "cp1"
     cp1.vm.network "public_network", bridge: "vEthernet (WSL)"
@@ -110,12 +109,12 @@ Vagrant.configure("2") do |config|
       vmware.vmx["numvcpus"] = "2"
     end
     
-[//]: # 🚀 Provisioning du control plane
+    # 🚀 Provisioning du control plane
     cp1.vm.provision "shell", path: "scripts/common.sh"
     cp1.vm.provision "shell", path: "scripts/control-plane.sh"
   end
   
-[//]: # 👷 Workers (w1, w2, w3)
+  # 👷 Workers (w1, w2, w3)
   (1..3).each do |i|
     config.vm.define "w#{i}" do |worker|
       worker.vm.hostname = "w#{i}"
@@ -127,12 +126,15 @@ Vagrant.configure("2") do |config|
         vmware.vmx["numvcpus"] = "2"
       end
       
-[//]: # 🚀 Provisioning des workers
+      # 🚀 Provisioning des workers
       worker.vm.provision "shell", path: "scripts/common.sh"
       worker.vm.provision "shell", path: "scripts/worker.sh"
     end
   end
 end
+```
+
+
 
 
 ### 🔧 Installation Kubernetes  
