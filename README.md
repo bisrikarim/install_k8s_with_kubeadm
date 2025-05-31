@@ -64,6 +64,20 @@ kubectl get nodes
 #### Résultat attendu :  
 <img width="413" alt="image" src="https://github.com/user-attachments/assets/74f70fc9-a826-4055-896c-8916b7a87d00" />
 
+### 📁 Structure du projet
+kubernetes-vagrant-cluster/  
+├── 📄 Vagrantfile              # Configuration des VMs  
+├── 📄 README.md                # Cette documentation  
+├── 📁 scripts/  
+│   ├── 🔧 common.sh            # Script commun à tous les nœuds  
+│   ├── 🎛️ control-plane.sh     # Script spécifique au control plane  
+│   └── 👷 worker.sh            # Script pour les workers  
+├── 📁 manifests/  
+│   ├── 🌐 calico.yaml          # Configuration Calico CNI  
+│   └── 🧪 test-app.yaml        # Application de test  
+└── 📁 docs/  
+    ├── 🐛 troubleshooting.md   # Guide de dépannage  
+    └── 🔧 advanced-config.md   # Configuration avancée  
 
 
 
@@ -72,7 +86,13 @@ kubectl get nodes
 
 
 
-### 📁 Structure du projet  
+
+
+
+
+
+
+
 ### 🛠️ Configuration Vagrant  
 ### 🔧 Installation Kubernetes  
 ### ✅ Tests et validation  
