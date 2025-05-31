@@ -49,18 +49,19 @@ sudo apt install vagrant
 
 ### ⚡ Installation rapide
 
-#### 1️⃣ Cloner le repository  
+#### 1️⃣ Cloner le repository
 git clone https://github.com/votre-username/kubernetes-vagrant-cluster.git  
 cd kubernetes-vagrant-cluster 
 
-#### 2️⃣ Démarrer le cluster  
+#### 2️⃣ Démarrer le cluster
 Créer et démarrer toutes les VMs  
 vagrant up  
-#### 3️⃣ Se connecter au control plane  
+
+#### 3️⃣ Se connecter au control plane
 vagrant ssh cp1  
 kubectl get nodes  
 
-#### Résultat attendu :
+#### Résultat attendu :  
 <img width="413" alt="image" src="https://github.com/user-attachments/assets/74f70fc9-a826-4055-896c-8916b7a87d00" />
 
 
