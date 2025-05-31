@@ -26,16 +26,16 @@ Ce projet vous permet de créer automatiquement un cluster Kubernetes production
 <img width="523" alt="image" src="https://github.com/user-attachments/assets/ba74dcee-8f51-4e04-becf-b854fff35b2f" />
 
 #### 🛠️ Logiciels requis
-#### Windows (avec Chocolatey)
+##### Windows (avec Chocolatey)
 ```bash
 choco install vagrant vmware-workstation
 ```
-#### macOS (avec Homebrew)
+##### macOS (avec Homebrew)
 ```bash
 brew install vagrant
 brew install --cask vmware-fusion
 ```
-#### Linux (Ubuntu/Debian)
+##### Linux (Ubuntu/Debian)
 ```bash
 sudo apt update
 sudo apt install vagrant
