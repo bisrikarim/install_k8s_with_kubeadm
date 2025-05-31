@@ -1,24 +1,26 @@
 # 🚀 Kubernetes Cluster avec Vagrant et kubeadm
 ## 📖 Guide complet pour créer un cluster Kubernetes multi-nœuds avec Vagrant et kubeadm sur Ubuntu 22.04
 ### 📋 Table des matières
-🎯 Vue d'ensemble
-📦 Prérequis
-🏗️ Architecture
-⚡ Installation rapide
-📁 Structure du projet
-🛠️ Configuration Vagrant
-🔧 Installation Kubernetes
-✅ Tests et validation
-🎛️ Gestion du cluster
-🐛 Dépannage
-📚 Ressources
+🎯 Vue d'ensemble  
+📦 Prérequis  
+🏗️ Architecture  
+⚡ Installation rapide  
+📁 Structure du projet  
+🛠️ Configuration Vagrant  
+🔧 Installation Kubernetes  
+✅ Tests et validation  
+🎛️ Gestion du cluster  
+🐛 Dépannage  
+📚 Ressources  
+
 ### 🎯 Vue d'ensemble
-Ce projet vous permet de créer automatiquement un cluster Kubernetes production-ready composé de :
-🎛️ 1 Control Plane (cp1) - 4GB RAM, 2 vCPUs
-👷 3 Worker Nodes (w1, w2, w3) - 2GB RAM, 2 vCPUs chacun
-🌐 Réseau Calico CNI pour la communication inter-pods
-🐳 Containerd comme runtime de conteneurs
-🔐 RBAC et politiques de sécurité activées
+Ce projet vous permet de créer automatiquement un cluster Kubernetes production-ready composé de :  
+🎛️ 1 Control Plane (cp1) - 4GB RAM, 2 vCPUs  
+👷 3 Worker Nodes (w1, w2, w3) - 2GB RAM, 2 vCPUs chacun  
+🌐 Réseau Calico CNI pour la communication inter-pods  
+🐳 Containerd comme runtime de conteneurs  
+🔐 RBAC et politiques de sécurité activées  
+
 ### 📦 Prérequis
 #### 💻 Système hôte
 <img width="523" alt="image" src="https://github.com/user-attachments/assets/ba74dcee-8f51-4e04-becf-b854fff35b2f" />
