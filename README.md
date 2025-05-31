@@ -87,7 +87,7 @@ vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
   
-[//]: # (🐧 Box Ubuntu 22.04 compatible VMware)
+<!--- 🐧 Box Ubuntu 22.04 compatible VMware -->
   config.vm.box = "generic/ubuntu2204"
   
 [//]: # 🔧 Configuration VMware globale
