@@ -79,21 +79,62 @@ kubernetes-vagrant-cluster/
     ├── 🐛 troubleshooting.md   # Guide de dépannage  
     └── 🔧 advanced-config.md   # Configuration avancée  
 
+### 🛠️ Configuration Vagrant
+#### 📝 Vagrantfile complet
+
+[//]: # -*- mode: ruby -*-
+[//]: # vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  
+[//]: # 🐧 Box Ubuntu 22.04 compatible VMware
+  config.vm.box = "generic/ubuntu2204"
+  
+[//]: # 🔧 Configuration VMware globale
+  config.vm.provider "vmware_desktop" do |vmware|
+    vmware.vmx["memsize"] = "2048"
+    vmware.vmx["numvcpus"] = "2"
+  end
+  
+[//]: # 🔐 Configuration SSH
+  config.ssh.insert_key = false
+  
+[//]: # 🎛️ Control Plane (cp1)
+  config.vm.define "cp1" do |cp1|
+    cp1.vm.hostname = "cp1"
+    cp1.vm.network "public_network", bridge: "vEthernet (WSL)"
+    
+    cp1.vm.provider "vmware_desktop" do |vmware|
+      vmware.vmx["displayName"] = "k8s-cp1"
+      vmware.vmx["memsize"] = "4096"     # 4GB pour le control plane
+      vmware.vmx["numvcpus"] = "2"
+    end
+    
+[//]: # 🚀 Provisioning du control plane
+    cp1.vm.provision "shell", path: "scripts/common.sh"
+    cp1.vm.provision "shell", path: "scripts/control-plane.sh"
+  end
+  
+[//]: # 👷 Workers (w1, w2, w3)
+  (1..3).each do |i|
+    config.vm.define "w#{i}" do |worker|
+      worker.vm.hostname = "w#{i}"
+      worker.vm.network "public_network", bridge: "vEthernet (WSL)"
+      
+      worker.vm.provider "vmware_desktop" do |vmware|
+        vmware.vmx["displayName"] = "k8s-w#{i}"
+        vmware.vmx["memsize"] = "2048"   # 2GB pour les workers
+        vmware.vmx["numvcpus"] = "2"
+      end
+      
+[//]: # 🚀 Provisioning des workers
+      worker.vm.provision "shell", path: "scripts/common.sh"
+      worker.vm.provision "shell", path: "scripts/worker.sh"
+    end
+  end
+end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-### 🛠️ Configuration Vagrant  
 ### 🔧 Installation Kubernetes  
 ### ✅ Tests et validation  
 ### 🎛️ Gestion du cluster  
