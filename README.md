@@ -62,11 +62,12 @@ vagrant ssh cp1
 kubectl get nodes
 
 #### Résultat attendu :
-NAME   STATUS   ROLES           AGE   VERSION
-cp1    Ready    control-plane   5m    v1.33.1
-w1     Ready    <none>          3m    v1.33.1
-w2     Ready    <none>          3m    v1.33.1
-w3     Ready    <none>          3m    v1.33.1
+NAME   STATUS   ROLES           AGE   VERSION  
+cp1    Ready    control-plane   5m    v1.33.1  
+w1     Ready    <none>          3m    v1.33.1  
+w2     Ready    <none>          3m    v1.33.1  
+w3     Ready    <none>          3m    v1.33.1  
+
 
 
 
