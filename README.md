@@ -62,7 +62,8 @@ vagrant ssh cp1
 kubectl get nodes
 
 #### Résultat attendu :
-<img width="298" alt="image" src="https://github.com/user-attachments/assets/5c12e73c-f6f9-4bfc-ab4f-d4d017455f5b" />
+<img width="413" alt="image" src="https://github.com/user-attachments/assets/74f70fc9-a826-4055-896c-8916b7a87d00" />
+
 
 
 
